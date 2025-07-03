@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.github.raghul-tech</groupId>
+  <artifactId>swing-markdown-preview-parent</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+   <name>Swing Markdown Preview Parent</name>
+  <description>
+    Swing Markdown Preview is a Java library for rendering Markdown in Swing applications. 
+    It provides core rendering components that can be extended or customized, including 
+    support for theme switching and live updates. Use this module if you prefer managing 
+    your own dependencies like Flexmark.
+  </description>
+
+  <url>https://github.com/raghul-tech/Swing-Markdown-Preview</url>
+
+  <modules>
+    <module>swing-markdown-preview</module>
+    <module>swing-markdown-preview-all</module>
+  </modules>
+
+  <properties>
+    <java.version>17</java.version>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <release>${java.version}</release>
+        </configuration>
+      </plugin>
+      <!-- GPG and deploy remain here -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals><goal>sign</goal></goals>
+          </execution>
+        </executions>
+        <configuration>
+          <useAgent>true</useAgent>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>3.1.1</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>

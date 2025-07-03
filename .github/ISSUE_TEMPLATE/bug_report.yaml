@@ -1,0 +1,78 @@
+name: 🐞 Bug Report
+description: Help improve Swing-Markdown-Preview by reporting a bug
+title: "[Bug] <Short bug summary>"
+labels: ["bug"]
+assignees:
+  - raghul-tech
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🐛 Thanks for helping us improve Swing-Markdown-Preview!
+        Please fill out the details below to report your bug clearly.
+
+  - type: input
+    id: environment
+    attributes:
+      label: 💻 Environment
+      description: Tell us about your system and setup.
+      placeholder: "e.g. Windows 11, Java 17, Swing-Markdown-Preview 1.0.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 😕 What went wrong?
+      description: Describe the problem or error clearly.
+      placeholder: "Example: Markdown preview panel fails to render headings."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 🧪 Steps to Reproduce
+      description: List the steps to see the bug.
+      placeholder: |
+        Example:
+        1. Open a Markdown file in the preview panel
+        2. Switch theme to Dark Mode
+        3. Preview becomes blank
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: ✅ What should have happened?
+      description: Describe what you expected instead.
+      placeholder: "I expected the Markdown preview to render correctly when switching themes."
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 📄 Error Message or Logs (optional)
+      description: Paste any error message or stack trace if you have it.
+      render: shell
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 📸 Screenshot (optional)
+      description: Add a screenshot if it helps explain the issue.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Before submitting...
+      options:
+        - label: I checked for [existing issues](https://github.com/raghul-tech/Swing-Markdown-Preview/issues)
+          required: true
+        - label: I’m using the **latest version** of Swing-Markdown-Preview
+          required: true
+        - label: I provided all required information
+          required: true
